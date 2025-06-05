@@ -3,10 +3,10 @@
 function waitFor(element, eventName) {
   const prom = new Promise((resolve) => {
     element.addEventListener(eventName, function () {
-      resolve();
+      const message = `It was ${eventName} 
+        on the element: ${element.nodeName}, id: ${element.id}.`;
 
-      printMessage(`It was ${eventName} 
-        on the element: ${element.nodeName}, id: ${element.id}.`);
+      resolve(message);
     });
   });
 
